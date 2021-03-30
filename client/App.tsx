@@ -2,7 +2,7 @@ import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-// import Col from 'react-bootstrap/Col';
+import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 
@@ -13,25 +13,22 @@ import Row from 'react-bootstrap/Row';
 
 
 export const App: React.FC = () => {
-  return (
-      <Container fluid>
-          <Row>
-              <h1>Bootket List</h1>
-          </Row>
-      </Container>
-    // <React.Fragment>
-    // <div id="header">
-    //     <h1>Bootket List</h1>
-    // </div>
-    // <div id="body">
-    //     <div id="navigation_toggle_bar">Navigation Toggle Bar</div>
-    //     <div>Hikes List (specific to NP selected)</div>
-    //     <div>Hike Selected Infomation</div>
-    // </div>
-    // </React.Fragment>
+    // const 
+    // const [isNPListShowing, setIsNPListShowing] = React.useState(true);
 
+    
 
-   
-  )
+    return (
+        <React.Fragment>
+            <Container fluid>
+                <Row><h1>Bootket List</h1></Row>
+                <Row>
+                    <Col><h1>NPList</h1></Col>
+                    <Col><h1>HikesList</h1></Col>
+                </Row>
+            </Container>
+        </React.Fragment>
+
+    )
 }
 

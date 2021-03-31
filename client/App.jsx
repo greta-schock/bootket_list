@@ -4,19 +4,19 @@ import _, { where } from 'underscore';
 //Child Components
 import NPList from './components/NPList.jsx';
 import HikesList from './components/HikesList.jsx';
-import HikeDetail from './components/HikeDetail.jsx';
+import SelectedHikeDetail from './components/SelectedHikeDetail.jsx';
 //React Bootstrap Components
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import TabContainer from 'react-bootstrap/TabContainer';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
-    const [selectedHikeInfo, setselectedHikeInfo] = useState({});
+    const [selectedHikeInfo, setSelectedHikeInfo] = useState({});
 
     // const [isNPListShowing, setIsNPListShowing] = React.useState(true);
 
@@ -47,21 +47,33 @@ const App = () => {
                 <Row><h1>Bootket List</h1></Row>
                 <Row>
                     <Col>
+
                         <h3>National Parks</h3>
-                        <NPList 
-                          parksInfoArr={parksInfoArr}
-                          getHikesInfo={getHikesInfo}
+                        <Form.Group>
+                            <Form.Control size="sm" type="text" width="25%" placeholder="Search" />
+                        </Form.Group>
+
+                        <NPList
+                            parksInfoArr={parksInfoArr}
+                            getHikesInfo={getHikesInfo}
                         />
                     </Col>
                     <Col>
-                        <h3>Hikes List</h3>
-                        <HikesList 
-                          hikeInfoArr={hikeInfoArr}
+                        <Row>
+                            <h3>Hikes List</h3>
+                            <Button>Sort Button</Button>
+
+                        </Row>
+                        <HikesList
+                            hikeInfoArr={hikeInfoArr}
+                            setSelectedHikeInfo={setSelectedHikeInfo}
                         />
                     </Col>
                     <Col>
-                      <h3>Hike Detail</h3>
-                      <HikeDetail />
+                        <h3>Hike Detail</h3>
+                        <SelectedHikeDetail
+                            selectedHikeInfo={selectedHikeInfo}
+                        />
 
                     </Col>
                 </Row>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import _, { where } from 'underscore';
-//My Child Components
+//Child Components
 import NPList from './components/NPList.jsx';
+import HikesList from './components/HikesList.jsx';
 //React Bootstrap Components
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -54,22 +55,9 @@ const App = () => {
                     </Col>
                     <Col>
                         <h3>Hikes List</h3>
-                        <TabContainer id="list-group-tabs-example">
-                            <Row>
-                                <Col>
-                                    <ListGroup>
-                                        {hikeInfoArr.map((hike) => (
-                                            <ListGroup.Item
-                                                action
-                                                key={hike.id}
-                                                // value={park.parkCode}
-                                                // onClick={(event) => getHikesInfo(event.target.value)}
-                                            >{hike.title}</ListGroup.Item>
-                                        ))}
-                                    </ListGroup>
-                                </Col>
-                            </Row>
-                        </TabContainer>
+                        <HikesList 
+                          hikeInfoArr={hikeInfoArr}
+                        />
                     </Col>
                 </Row>
             </Container>

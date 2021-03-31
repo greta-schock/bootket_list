@@ -11,7 +11,7 @@ const HikesList = ({hikeInfoArr}) => {
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
                 <Row>
-                    <Col>
+                    <Col md="auto">
                         <ListGroup>
                             {hikeInfoArr.map((hike) => (
                                 <ListGroup.Item

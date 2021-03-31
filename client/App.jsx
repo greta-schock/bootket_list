@@ -59,6 +59,9 @@ const App = () => {
                           hikeInfoArr={hikeInfoArr}
                         />
                     </Col>
+                    <Col>
+                      <h3>Hike Detail</h3>
+                    </Col>
                 </Row>
             </Container>
         </React.Fragment>

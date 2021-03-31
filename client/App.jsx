@@ -3,22 +3,18 @@ import axios from 'axios';
 import _, { where } from 'underscore';
 //Child Components
 import ExplorePage from './ExplorePage.jsx';
-// import NPList from './explore_components/NPList.jsx';
-// import HikesList from './explore_components/HikesList.jsx';
-// import SelectedHikeDetail from './explore_components/SelectedHikeDetail.jsx';
+import MyBootketList from './MyBootketListPage.jsx';
 //React Bootstrap Components
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
-import Row from 'react-bootstrap/Row';
 
 const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
+    const [explorePageIsDisplayed, setExplorePageIsDisplayed] = useState(true);
 
     const getParksInfo = () => {
         axios.get('/api/parksInfo')
@@ -36,18 +32,22 @@ const App = () => {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand href="#home"><h1>[boot icon here]Bootket List</h1></Navbar.Brand>
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Explore</Nav.Link>
-                    <Nav.Link href="#features">My Bootket List</Nav.Link>
+                    <Nav.Link href="#home" onClick={() => setExplorePageIsDisplayed(true)}>Explore</Nav.Link>
+                    <Nav.Link href="#features" onClick={() => setExplorePageIsDisplayed(false)}>My Bootket List</Nav.Link>
                 </Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                     <Button variant="outline-info">Search</Button>
                 </Form>
             </Navbar>
-            <ExplorePage
-              parksInfoArr={parksInfoArr}
-            />
-            
+            {explorePageIsDisplayed
+                ? <ExplorePage
+                    parksInfoArr={parksInfoArr}
+                  />
+                : <MyBootketList />
+            }
+
+
             <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </React.Fragment>
     )

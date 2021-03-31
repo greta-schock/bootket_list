@@ -4,6 +4,7 @@ import _, { where } from 'underscore';
 //Child Components
 import NPList from './components/NPList.jsx';
 import HikesList from './components/HikesList.jsx';
+import HikeDetail from './components/HikeDetail.jsx';
 //React Bootstrap Components
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -15,7 +16,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
-    const [displayHikesInfoArr, setDisplayHikesInfoArr] = useState([]);
+    const [selectedHikeInfo, setselectedHikeInfo] = useState({});
 
     // const [isNPListShowing, setIsNPListShowing] = React.useState(true);
 
@@ -24,7 +25,6 @@ const App = () => {
             .then((data) => {
                 const npArr = _.where(data.data, { designation: "National Park" });
                 setParksInfoArr(npArr);
-                //setDisplayParksInfoArr(npArr);
             })
             .catch((err) => console.log(err));
     }
@@ -61,6 +61,8 @@ const App = () => {
                     </Col>
                     <Col>
                       <h3>Hike Detail</h3>
+                      <HikeDetail />
+
                     </Col>
                 </Row>
             </Container>

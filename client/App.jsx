@@ -42,28 +42,15 @@ const App = () => {
 
     return (
         <React.Fragment>
-            <NPList />
             <Container fluid>
                 <Row><h1>Bootket List</h1></Row>
                 <Row>
                     <Col>
                         <h3>National Parks</h3>
-                        <TabContainer id="list-group-tabs-example">
-                            <Row>
-                                <Col sm={4}>
-                                    <ListGroup>
-                                        {parksInfoArr.map((park) => (
-                                            <ListGroup.Item
-                                                action
-                                                key={park.id}
-                                                value={park.parkCode}
-                                                onClick={(event) => getHikesInfo(event.target.value)}
-                                            >{park.name}</ListGroup.Item>
-                                        ))}
-                                    </ListGroup>
-                                </Col>
-                            </Row>
-                        </TabContainer>
+                        <NPList 
+                          parksInfoArr={parksInfoArr}
+                          getHikesInfo={getHikesInfo}
+                        />
                     </Col>
                     <Col>
                         <h3>Hikes List</h3>

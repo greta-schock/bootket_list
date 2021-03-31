@@ -1,20 +1,9 @@
-// import * as React from 'react';
+import React from 'react';
 
-// export const NPList: React.FC = () => 
+const NPList = () => {
+    return (
+        <div>NPList is working!</div>
+    )
+}
 
-
-// <TabContainer id="list-group-tabs-example" defaultActiveKey="#link1">
-// <Row>
-//     <Col sm={4}>
-//         <ListGroup>
-//             {parksInfoArr.map((park) => (
-//                 <ListGroup.Item 
-//                 action
-//                 onClick={() => console.log(`${park.name} was clicked!`)}
-//                 key={park.id}
-//                 >{park.name}</ListGroup.Item>
-//             ))}
-//         </ListGroup>
-//     </Col>
-// </Row>
-// </TabContainer>
+export default NPList;

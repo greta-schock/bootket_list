@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import _, { where } from 'underscore';
+//My Child Components
+import NPList from './components/NPList.jsx';
+//React Bootstrap Components
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -39,6 +42,7 @@ const App = () => {
 
     return (
         <React.Fragment>
+            <NPList />
             <Container fluid>
                 <Row><h1>Bootket List</h1></Row>
                 <Row>

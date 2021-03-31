@@ -39,11 +39,8 @@ const ExplorePage = ({ parksInfoArr }) => {
                         getHikesInfo={getHikesInfo}
                     />
                 </Col>
-                <Col>
-                    <Row>
+                <Col sm={3}>
                         <h3>Hikes List</h3>
-                        {/* <Button>Sort Button</Button> */}
-                    </Row>
                     <HikesList
                         hikeInfoArr={hikeInfoArr}
                         setSelectedHikeInfo={setSelectedHikeInfo}

@@ -29,10 +29,10 @@ const ExplorePage = ({ parksInfoArr }) => {
     return (
         <Container fluid>
             <Row>
-                <Col>
+                <Col sm={2}>
                     <h3>National Parks</h3>
-                    <Form.Group>
-                        <Form.Control size="sm" type="text" width="25%" placeholder="Search" />
+                    <Form.Group> {/* this width is not working :/ */}
+                        <Form.Control className="np-search" size="sm" type="text" placeholder="Search" />
                     </Form.Group>
                     <NPList
                         parksInfoArr={parksInfoArr}
@@ -49,7 +49,7 @@ const ExplorePage = ({ parksInfoArr }) => {
                         setSelectedHikeInfo={setSelectedHikeInfo}
                     />
                 </Col>
-                <Col>
+                <Col md="auto">
                     <h3>Hike Detail</h3>
                     <SelectedHikeDetail
                         selectedHikeInfo={selectedHikeInfo}

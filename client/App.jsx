@@ -10,8 +10,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
-    //const [displayParksInfoArr, setDisplayParksInfoArr] = React.useState([]);
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
+    const [displayHikesInfoArr, setDisplayHikesInfoArr] = useState([]);
 
     // const [isNPListShowing, setIsNPListShowing] = React.useState(true);
 
@@ -28,11 +28,11 @@ const App = () => {
     const getHikesInfo = (parkCode) => {
         console.log(parkCode)
         axios.get(`/api/hikingTrailsInfo/${parkCode}`)
-          .then((data) => {
-              console.log(data.data);
-              setHikeInfoArr(data.data);
+            .then((data) => {
+                console.log('data coming in from the GET request: ', data.data);
+                setHikeInfoArr(data.data);
             })
-          .catch((err) => console.log(err));
+            .catch((err) => console.log(err));
     }
 
     useEffect(() => getParksInfo(), []);
@@ -49,11 +49,11 @@ const App = () => {
                                 <Col sm={4}>
                                     <ListGroup>
                                         {parksInfoArr.map((park) => (
-                                            <ListGroup.Item 
-                                            action
-                                            key={park.id}
-                                            value={park.parkCode}
-                                            onClick={(event) => getHikesInfo(event.target.value)}
+                                            <ListGroup.Item
+                                                action
+                                                key={park.id}
+                                                value={park.parkCode}
+                                                onClick={(event) => getHikesInfo(event.target.value)}
                                             >{park.name}</ListGroup.Item>
                                         ))}
                                     </ListGroup>
@@ -62,14 +62,23 @@ const App = () => {
                         </TabContainer>
                     </Col>
                     <Col>
-                      <h3>HikesList</h3>
-                      <ListGroup>
-
-                      {hikeInfoArr.map((hike) => {
-                          <ListGroup.Item>{hike.title}</ListGroup.Item>
-                      })}
-                      </ListGroup>
-
+                        <h3>HikesList</h3>
+                        <TabContainer id="list-group-tabs-example">
+                            <Row>
+                                <Col>
+                                    <ListGroup>
+                                        {hikeInfoArr.map((hike) => (
+                                            <ListGroup.Item
+                                                action
+                                                key={hike.id}
+                                                // value={park.parkCode}
+                                                // onClick={(event) => getHikesInfo(event.target.value)}
+                                            >{hike.title}</ListGroup.Item>
+                                        ))}
+                                    </ListGroup>
+                                </Col>
+                            </Row>
+                        </TabContainer>
                     </Col>
                 </Row>
             </Container>
@@ -77,5 +86,6 @@ const App = () => {
     )
 }
 
-export default App; 
+
+export default App;
 

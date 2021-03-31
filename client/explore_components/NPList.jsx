@@ -10,7 +10,7 @@ const NPList = ({ parksInfoArr, getHikesInfo }) => {
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
                 <Row>
-                    <Col sm={4}>
+                    <Col sm={6}>
                         <ListGroup>
                             {parksInfoArr.map((park) => (
                                 <ListGroup.Item

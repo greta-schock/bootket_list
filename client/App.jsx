@@ -30,7 +30,7 @@ const App = () => {
     return (
         <React.Fragment>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home"><h1>[boot icon here]Bootket List</h1></Navbar.Brand>
+                <Navbar.Brand href="#home"><h1><img src="../images/boot.png" width="35px"></img>Bootket List</h1></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="#home" onClick={() => setExplorePageIsDisplayed(true)}>Explore</Nav.Link>
                     <Nav.Link href="#features" onClick={() => setExplorePageIsDisplayed(false)}>My Bootket List</Nav.Link>
@@ -40,19 +40,16 @@ const App = () => {
                     <Button variant="outline-info">Search</Button>
                 </Form>
             </Navbar>
+            <br></br>
             {explorePageIsDisplayed
                 ? <ExplorePage
                     parksInfoArr={parksInfoArr}
                   />
                 : <MyBootketList />
             }
-
-
-            <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div color="white">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </React.Fragment>
     )
 }
-
-
 export default App;
 

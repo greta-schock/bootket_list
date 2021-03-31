@@ -24,11 +24,9 @@ app.get('/api/parksInfo', (req, res) => {
 })
 
 app.get('/api/hikingTrailsInfo/:parkCode', (req, res) => {
-  //the request object is the parkCode so we can find the specific hiking information for that parl
-  // console.log(req.params)
   const { parkCode } = req.params; //req.body
   console.log(parkCode)
-  axios.get(`https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&q=hiking&api_key=${API_KEY_NP}`)
+  axios.get(`https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&q=trails&api_key=${API_KEY_NP}`)
     .then((results) => {
       res.send(results.data.data);
     })

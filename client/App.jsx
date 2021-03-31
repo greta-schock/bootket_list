@@ -62,7 +62,7 @@ const App = () => {
                         </TabContainer>
                     </Col>
                     <Col>
-                        <h3>HikesList</h3>
+                        <h3>Hikes List</h3>
                         <TabContainer id="list-group-tabs-example">
                             <Row>
                                 <Col>

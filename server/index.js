@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(PUBLIC_DIR));
 
-app.get('/api/parkInfo', (req, res) => {
+app.get('/api/parksInfo', (req, res) => {
   axios.get(`https://developer.nps.gov/api/v1/parks?limit=271&q=hiking&api_key=${API_KEY_NP}`)
     .then((results) => {
       res.send(results.data.data);

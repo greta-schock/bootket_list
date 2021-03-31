@@ -30,7 +30,7 @@ const App = () => {
     return (
         <React.Fragment>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home"><h1><img src="../images/boot.png" width="35px"></img>Bootket List</h1></Navbar.Brand>
+                <Navbar.Brand href="#home"><h1><img src="../images/boot.png" width="35px"></img>&nbsp;Bootket List</h1></Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="#home" onClick={() => setExplorePageIsDisplayed(true)}>Explore</Nav.Link>
                     <Nav.Link href="#features" onClick={() => setExplorePageIsDisplayed(false)}>My Bootket List</Nav.Link>

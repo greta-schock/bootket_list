@@ -42,14 +42,14 @@ const ExplorePage = ({ parksInfoArr }) => {
                 <Col>
                     <Row>
                         <h3>Hikes List</h3>
-                        <Button>Sort Button</Button>
+                        {/* <Button>Sort Button</Button> */}
                     </Row>
                     <HikesList
                         hikeInfoArr={hikeInfoArr}
                         setSelectedHikeInfo={setSelectedHikeInfo}
                     />
                 </Col>
-                <Col md="auto">
+                <Col>
                     <h3>Hike Detail</h3>
                     <SelectedHikeDetail
                         selectedHikeInfo={selectedHikeInfo}

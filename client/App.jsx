@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import _, { where } from 'underscore';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,18 +8,10 @@ import Row from 'react-bootstrap/Row';
 import TabContainer from 'react-bootstrap/TabContainer';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-
-// interface IParksInfoArr {
-//     id: string, 
-//     url: string,
-//     name: string
-// }
-
-
-export const App: React.FC = () => {
-    const [parksInfoArr, setParksInfoArr] = React.useState([]);
+const App = () => {
+    const [parksInfoArr, setParksInfoArr] = useState([]);
     //const [displayParksInfoArr, setDisplayParksInfoArr] = React.useState([]);
-    const [hikeInfoArr, setHikeInfoArr] = React.useState([]);
+    const [hikeInfoArr, setHikeInfoArr] = useState([]);
 
     // const [isNPListShowing, setIsNPListShowing] = React.useState(true);
 
@@ -43,7 +35,7 @@ export const App: React.FC = () => {
           .catch((err) => console.log(err));
     }
 
-    React.useEffect(() => getParksInfo(), []);
+    useEffect(() => getParksInfo(), []);
 
     return (
         <React.Fragment>
@@ -84,4 +76,6 @@ export const App: React.FC = () => {
         </React.Fragment>
     )
 }
+
+export default App; 
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import SelectedHikePhoto from './SelectedHikePhoto.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 
 const SelectedHikeDetail = ({ selectedHikeInfo }) => {
@@ -18,7 +20,7 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                     {/* <Card.Title>Trail Information</Card.Title> */}
                     <Container>
                         <Row>
-                            <Col sm={3}>
+                            <Col sm={4}>
                                 {selectedHikeInfo.duration.length > 0
                                     ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>&nbsp;{selectedHikeInfo.duration}</Card.Text>
                                     : null
@@ -31,6 +33,12 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                                     ? <a href={selectedHikeInfo.url} target="_blank"><img src="../images/national-park.png" width="30px"></img>&nbsp;Visit nps.gov</a>
                                     : null
                                 }
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <Form>
+=                                    <Button variant="outline-info"><img src="../images/boot.png" width="30px"></img>Add to My Bootket List</Button>
+                                </Form>
                             </Col>
                             <Col>
                                 {selectedHikeInfo.shortDescription.length > 0
@@ -43,9 +51,9 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                                 }
                                 {selectedHikeInfo.accessibilityInformation.length > 0
                                     ? (<React.Fragment>
-                                       <Card.Title>Accessibility</Card.Title>
-                                       <Card.Text>{selectedHikeInfo.accessibilityInformation}</Card.Text>
-                                       </React.Fragment>
+                                        <Card.Title>Accessibility</Card.Title>
+                                        <Card.Text>{selectedHikeInfo.accessibilityInformation}</Card.Text>
+                                    </React.Fragment>
                                     )
                                     : null
                                 }

@@ -44,6 +44,7 @@ const fakeData = [
     {
         "id": "1F24AEAD-4A69-4948-B793-D75756C25C84",
         "parkName": "Black Canyon Of The Gunnison",
+        "map": "https://www.nps.gov/blca/planyourvisit/upload/BLCAmap_2013_w-masthead.pdf",
         "url": "https://www.nps.gov/thingstodo/t2do_deadhorse.htm",
         "title": "Deadhorse Trail - North Rim",
         "shortDescription": "Easy to moderately strenuous - 5 miles round trip",

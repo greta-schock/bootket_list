@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl'
+import Modal from 'react-bootstrap/Modal';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
 
@@ -16,6 +17,10 @@ const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
     const [displayParksInfoArr, setDisplayParksInfoArr] = useState([]);
     const [explorePageIsDisplayed, setExplorePageIsDisplayed] = useState(true);
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
 
     const getParksInfo = () => {
         axios.get('/api/parksInfo')
@@ -51,7 +56,7 @@ const App = () => {
                 </Nav>
                 <Form inline>
                     {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-                    <Button variant="outline-info">Sign Up</Button>
+                    <Button variant="outline-info" onClick={handleShow}>Learn About Leave No Trace</Button>&nbsp;&nbsp;&nbsp;<Button variant="outline-info">Sign Up</Button>
                 </Form>
             </Navbar>
             {explorePageIsDisplayed
@@ -59,10 +64,19 @@ const App = () => {
                     parksInfoArr={parksInfoArr}
                     displayParksInfoArr={displayParksInfoArr}
                     specificParkSearch={specificParkSearch}
-                  />
+                />
                 : <MyBootketList />
             }
-            <div style={{color: 'white'}}>Icons made by <a href="https://www.freepik.com" title="Freepik" style={{color: 'white'}}>Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" style={{color: 'white'}}>www.flaticon.com</a></div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Seven Principles of Leave No Trace</Modal.Title>
+                </Modal.Header>
+                <Modal.Body><img src="../images/lnt.jpeg" width="450px"></img></Modal.Body>
+                <Modal.Footer>
+                    <a href="https://lnt.org/" target="_blank">Learn more at lnt.org</a>
+                </Modal.Footer>
+            </Modal>
+            <div style={{ color: 'white' }}>Icons made by <a href="https://www.freepik.com" title="Freepik" style={{ color: 'white' }}>Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon" style={{ color: 'white' }}>www.flaticon.com</a></div>
         </React.Fragment>
     )
 }

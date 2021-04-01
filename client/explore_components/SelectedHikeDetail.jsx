@@ -35,6 +35,7 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                                     ? <a href={selectedHikeInfo.url} target="_blank"><img src="../images/national-park.png" width="30px"></img>&nbsp;Visit nps.gov</a>
                                     : null
                                 }
+                                
                                 <br></br>
                                 <br></br>
                                 <br></br>

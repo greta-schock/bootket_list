@@ -20,15 +20,15 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                         <Row>
                             <Col sm={3}>
                                 {selectedHikeInfo.duration.length > 0
-                                    ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>{selectedHikeInfo.duration}</Card.Text>
+                                    ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>&nbsp;{selectedHikeInfo.duration}</Card.Text>
                                     : null
                                 }
                                 {selectedHikeInfo.arePetsPermitted === "true"
-                                    ? <Card.Text><img src="../images/pets-allowed.png" width="30px"></img>Pets Allowed</Card.Text>
+                                    ? <Card.Text><img src="../images/pets-allowed.png" width="30px"></img>&nbsp;Pets Allowed</Card.Text>
                                     : <Card.Text><img src="../images/no-pets-allowed.png" width="30px"></img> No Pets Allowed</Card.Text>
                                 }
                                 {selectedHikeInfo.url.length > 0
-                                    ? <a href={selectedHikeInfo.url} target="_blank"><img src="../images/national-park.png" width="30px"></img>Visit nps.gov</a>
+                                    ? <a href={selectedHikeInfo.url} target="_blank"><img src="../images/national-park.png" width="30px"></img>&nbsp;Visit nps.gov</a>
                                     : null
                                 }
                             </Col>

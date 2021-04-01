@@ -10,7 +10,7 @@ const NPList = ({ parksInfoArr, getHikesInfo, setIsHikesListDisplayed }) => {
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
                 <Row>
-                    <Col>
+                    <Col style={{maxHeight: "850px", overflowY: "auto"}}>
                         <ListGroup>
                             {parksInfoArr.map((park) => (
                                 <ListGroup.Item

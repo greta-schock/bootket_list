@@ -14,7 +14,10 @@ import Row from 'react-bootstrap/Row';
 
 const ExplorePage = ({ parksInfoArr }) => {
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
-    const [selectedHikeInfo, setSelectedHikeInfo] = useState({});
+    const [isHikesListDisplayed, setIsHikesListDisplayed] = useState(false);
+    const [selectedHikeInfo, setSelectedHikeInfo] = useState(false);
+    const [isSelectedHikeDisplayed, setIsSelectedHikeDisplayed] = useState(false);
+
 
     const getHikesInfo = (parkCode) => {
         console.log(parkCode)
@@ -37,21 +40,30 @@ const ExplorePage = ({ parksInfoArr }) => {
                     <NPList
                         parksInfoArr={parksInfoArr}
                         getHikesInfo={getHikesInfo}
+                        setIsHikesListDisplayed={setIsHikesListDisplayed}
                     />
                 </Col>
-                <Col sm={3}>
-                        <h3>Hikes List</h3>
-                    <HikesList
-                        hikeInfoArr={hikeInfoArr}
-                        setSelectedHikeInfo={setSelectedHikeInfo}
-                    />
-                </Col>
-                <Col>
-                    <h3>Hike Detail</h3>
-                    <SelectedHikeDetail
-                        selectedHikeInfo={selectedHikeInfo}
-                    />
-                </Col>
+                {isHikesListDisplayed
+                    ? (<Col sm={3}>
+                            <h3>Hikes List</h3>
+                            <HikesList
+                                hikeInfoArr={hikeInfoArr}
+                                setSelectedHikeInfo={setSelectedHikeInfo}
+                                setIsSelectedHikeDisplayed={setIsSelectedHikeDisplayed}
+                            />
+                        </Col>)
+                    : null
+                }
+                {isSelectedHikeDisplayed 
+                    ? (<Col>
+                            <h3>{selectedHikeInfo.title}</h3>
+                            <SelectedHikeDetail
+                                selectedHikeInfo={selectedHikeInfo}
+                            />
+                         </Col>)
+                    : null
+                }
+
             </Row>
         </Container>
     )

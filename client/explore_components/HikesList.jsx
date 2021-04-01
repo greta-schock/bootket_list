@@ -6,7 +6,7 @@ import TabContainer from 'react-bootstrap/TabContainer';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
-const HikesList = ({ hikeInfoArr, setSelectedHikeInfo }) => {
+const HikesList = ({ hikeInfoArr, setSelectedHikeInfo, setIsSelectedHikeDisplayed }) => {
     return (
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
@@ -17,7 +17,10 @@ const HikesList = ({ hikeInfoArr, setSelectedHikeInfo }) => {
                                 <ListGroup.Item
                                     action
                                     key={hike.id}
-                                    onClick={() => setSelectedHikeInfo(hike)}
+                                    onClick={() => {
+                                        setSelectedHikeInfo(hike);
+                                        setIsSelectedHikeDisplayed(true);
+                                    }}
                                 >{hike.title}</ListGroup.Item>
                             ))}
                         </ListGroup>

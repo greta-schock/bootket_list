@@ -11,28 +11,44 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
     return (
         <React.Fragment>
             <Card>
-                <SelectedHikePhoto 
-                   selectedHikePhotosArr={selectedHikeInfo.images}
+                <SelectedHikePhoto
+                    selectedHikePhotosArr={selectedHikeInfo.images}
                 />
                 <Card.Body>
-                    <Card.Title>{selectedHikeInfo.title}</Card.Title>
+                    {/* <Card.Title>Trail Information</Card.Title> */}
                     <Container>
                         <Row>
                             <Col sm={3}>
-                                {selectedHikeInfo.duration.length > 0 
-                                  ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>{selectedHikeInfo.duration}</Card.Text>
-                                  : null
+                                {selectedHikeInfo.duration.length > 0
+                                    ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>{selectedHikeInfo.duration}</Card.Text>
+                                    : null
                                 }
-                              {selectedHikeInfo.arePetsPermitted === "true" 
-                                ? <Card.Text><img src="../images/pets-allowed.png" width="30px"></img>Pets Allowed</Card.Text>
-                                : <Card.Text><img src="../images/no-pets-allowed.png" width="30px"></img> No Pets Allowed</Card.Text>
-                              }
+                                {selectedHikeInfo.arePetsPermitted === "true"
+                                    ? <Card.Text><img src="../images/pets-allowed.png" width="30px"></img>Pets Allowed</Card.Text>
+                                    : <Card.Text><img src="../images/no-pets-allowed.png" width="30px"></img> No Pets Allowed</Card.Text>
+                                }
+                                {selectedHikeInfo.url.length > 0
+                                    ? <a href={selectedHikeInfo.url} target="_blank"><img src="../images/national-park.png" width="30px"></img>Visit nps.gov</a>
+                                    : null
+                                }
                             </Col>
                             <Col>
-                              <Card.Title>Description</Card.Title>
-                              <Card.Text>{selectedHikeInfo.shortDescription}</Card.Text>
-                              <Card.Title>Accessibility</Card.Title>
-                              <Card.Text>{selectedHikeInfo.accessibilityInformation}</Card.Text>
+                                {selectedHikeInfo.shortDescription.length > 0
+                                    ? (<React.Fragment>
+                                        <Card.Title>Description</Card.Title>
+                                        <Card.Text>{selectedHikeInfo.shortDescription}</Card.Text>
+                                    </React.Fragment>
+                                    )
+                                    : null
+                                }
+                                {selectedHikeInfo.accessibilityInformation.length > 0
+                                    ? (<React.Fragment>
+                                       <Card.Title>Accessibility</Card.Title>
+                                       <Card.Text>{selectedHikeInfo.accessibilityInformation}</Card.Text>
+                                       </React.Fragment>
+                                    )
+                                    : null
+                                }
                             </Col>
                         </Row>
                     </Container>

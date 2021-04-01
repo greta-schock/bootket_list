@@ -40,7 +40,7 @@ const ExplorePage = ({ parksInfoArr, specificParkSearch}) => {
                         size="sm" 
                         type="text" 
                         placeholder="Search"
-                        onChange={(e) => console.log('Here is the change: ', e.target.value)} 
+                        onChange={(event) => specificParkSearch(event.target.value)} 
                         />
                     </Form.Group>
                     <NPList

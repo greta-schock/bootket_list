@@ -45,7 +45,7 @@ const ExplorePage = ({ parksInfoArr }) => {
                 </Col>
                 {isHikesListDisplayed
                     ? (<Col sm={3}>
-                            <h3>Hikes List</h3>
+                        <h3>Trails/Hikes</h3>
                             <HikesList
                                 hikeInfoArr={hikeInfoArr}
                                 setSelectedHikeInfo={setSelectedHikeInfo}

@@ -1,14 +1,16 @@
 import React from 'react';
+import SelectedHikePhoto from './SelectedHikePhoto.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-// import Card from 'react-bootstrap'
 
 
 const SelectedHikeDetail = ({ selectedHikeInfo }) => {
     return (
         <React.Fragment>
             <Card>
-                {/* <Card.Img variant="top" src={selectedHikeInfo.images[0].url} /> */}
+                <SelectedHikePhoto 
+                   selectedHikePhotosArr={selectedHikeInfo.images}
+                />
                 <Card.Body>
                     <Card.Title>{selectedHikeInfo.title}</Card.Title>
                     <Card.Text>{selectedHikeInfo.shortDescription}</Card.Text>

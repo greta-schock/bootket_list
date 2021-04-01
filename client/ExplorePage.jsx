@@ -21,7 +21,7 @@ const ExplorePage = ({displayParksInfoArr, specificParkSearch}) => {
 
 
     const getHikesInfo = (parkCode) => {
-        console.log(parkCode)
+        // console.log(parkCode)
         axios.get(`/api/hikingTrailsInfo/${parkCode}`)
             .then((data) => {
                 console.log('data coming in from the GET request: ', data.data);

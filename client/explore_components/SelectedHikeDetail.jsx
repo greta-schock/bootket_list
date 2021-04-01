@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SelectedHikePhoto from './SelectedHikePhoto.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -10,6 +10,8 @@ import Row from 'react-bootstrap/Row';
 
 
 const SelectedHikeDetail = ({ selectedHikeInfo }) => {
+    const [isAddToBLButtonClicked, setIsAddToBLButtonClicked] = useState(false);
+
     return (
         <React.Fragment>
             <Card>
@@ -36,9 +38,15 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                                 <br></br>
                                 <br></br>
                                 <br></br>
-                                <Form>
-=                                    <Button variant="outline-info"><img src="../images/boot.png" width="30px"></img>Add to My Bootket List</Button>
-                                </Form>
+                                {isAddToBLButtonClicked 
+                                  ? (
+                                    <React.Fragment>
+                                        <Button variant="info"><img src="../images/boot.png" width="30px"></img>&nbsp;Added!</Button>
+                                        &nbsp;&nbsp;
+                                        <Button variant="light" onClick={() => setIsAddToBLButtonClicked(false)}>Remove</Button>
+                                    </React.Fragment>)
+                                  : <Button variant="outline-info" onClick={() => setIsAddToBLButtonClicked(true)}><img src="../images/boot.png" width="30px"></img>&nbsp;Add to My Bootket List</Button>
+                                } 
                             </Col>
                             <Col>
                                 {selectedHikeInfo.shortDescription.length > 0

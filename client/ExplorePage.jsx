@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-const ExplorePage = ({ parksInfoArr }) => {
+const ExplorePage = ({ parksInfoArr, specificParkSearch}) => {
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
     const [isHikesListDisplayed, setIsHikesListDisplayed] = useState(false);
     const [selectedHikeInfo, setSelectedHikeInfo] = useState(false);
@@ -35,7 +35,13 @@ const ExplorePage = ({ parksInfoArr }) => {
                 <Col sm={2} style={{backgroundColor: '#17a2b8'}}> 
                     <h3>National Parks</h3>
                     <Form.Group> {/* this width is not working :/ */}
-                        <Form.Control className="np-search" size="sm" type="text" placeholder="Search" />
+                        <Form.Control 
+                        className="np-search" 
+                        size="sm" 
+                        type="text" 
+                        placeholder="Search"
+                        onChange={(e) => console.log('Here is the change: ', e.target.value)} 
+                        />
                     </Form.Group>
                     <NPList
                         parksInfoArr={parksInfoArr}

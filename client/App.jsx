@@ -14,6 +14,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const App = () => {
     const [parksInfoArr, setParksInfoArr] = useState([]);
+    const [displayParksInfoArr, setDisplayParksInfoArr] = useState([]);
     const [explorePageIsDisplayed, setExplorePageIsDisplayed] = useState(true);
 
     const getParksInfo = () => {
@@ -21,8 +22,21 @@ const App = () => {
             .then((data) => {
                 const npArr = _.where(data.data, { designation: "National Park" });
                 setParksInfoArr(npArr);
+                setDisplayParksInfoArr(npArr);
             })
             .catch((err) => console.log(err));
+    }
+
+    const specificParkSearch = ({searchInput}) => {
+        var searchResultArr = [];
+        var lowerCaseInput = searchInput.toLowerCase();
+        parksInfoArr.map((park) => {
+            var lowerCaseParkName = park.name.toLowerCase();
+            if (lowerCaseParkName.includes(lowerCaseInput)) {
+                searchResultArr.push(movie);
+            }
+        })
+        setDisplayParksInfoArr(searchResultArr);
     }
 
     useEffect(() => getParksInfo(), []);

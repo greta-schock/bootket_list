@@ -5,7 +5,7 @@ const SelectedHikePhoto = ({ selectedHikePhotosArr }) => {
     return (
         <React.Fragment>
             {selectedHikePhotosArr.map((photoObj) => (
-                <Image src={photoObj.crops[0].url} fluid />
+                <Image  key={photoObj.crops[0].url} src={photoObj.crops[0].url} fluid />
             ))}
         </React.Fragment>
     )

@@ -17,7 +17,7 @@ const MyBootketListPage = () => {
                 </thead>
                 <tbody>
                     {fakeData.map((obj, index) => (
-                        <tr>
+                        <tr key={obj.id + index}>
                             <td>{index + 1}</td>
                             <td>{obj.title}</td>
                             <td>{obj.parkName}</td>

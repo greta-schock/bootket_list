@@ -11,7 +11,7 @@ const HikesList = ({ hikeInfoArr, setSelectedHikeInfo, setIsSelectedHikeDisplaye
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
                 <Row>
-                    <Col md="auto">
+                    <Col md="auto" style={{maxHeight: "900px", overflowY: "auto"}}>
                         <ListGroup>
                             {hikeInfoArr.map((hike) => (
                                 <ListGroup.Item

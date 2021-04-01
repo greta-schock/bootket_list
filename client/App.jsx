@@ -35,10 +35,10 @@ const App = () => {
                     <Nav.Link href="#home" onClick={() => setExplorePageIsDisplayed(true)}><h4>Explore</h4></Nav.Link>
                     <Nav.Link href="#features" onClick={() => setExplorePageIsDisplayed(false)}><h4>My Bootket List</h4></Nav.Link>
                 </Nav>
-                {/* <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                </Form> */}
+                <Form inline>
+                    {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
+                    <Button variant="outline-info">Sign Up</Button>
+                </Form>
             </Navbar>
             {explorePageIsDisplayed
                 ? <ExplorePage

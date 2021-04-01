@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import TabContainer from 'react-bootstrap/TabContainer';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const NPList = ({ displayParksInfoArr, getHikesInfo, setIsHikesListDisplayed }) => {
+const NPList = ({ displayParksInfoArr, setSelectedNP, getHikesInfo, setIsHikesListDisplayed }) => {
     return (
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
@@ -18,6 +18,7 @@ const NPList = ({ displayParksInfoArr, getHikesInfo, setIsHikesListDisplayed }) 
                                     key={park.id}
                                     value={park.parkCode}
                                     onClick={(event) => {
+                                        setSelectedNP(park.name);
                                         getHikesInfo(event.target.value);
                                         setIsHikesListDisplayed(true);
                                     }}

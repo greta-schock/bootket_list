@@ -28,7 +28,6 @@ const App = () => {
     }
 
     const specificParkSearch = (searchInput) => {
-        console.log('In the function: ', searchInput)
         var searchResultArr = [];
         var lowerCaseInput = searchInput.toLowerCase();
         parksInfoArr.map((park) => {

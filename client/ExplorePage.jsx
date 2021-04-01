@@ -15,7 +15,8 @@ import Row from 'react-bootstrap/Row';
 const ExplorePage = ({displayParksInfoArr, specificParkSearch}) => {
     const [hikeInfoArr, setHikeInfoArr] = useState([]);
     const [isHikesListDisplayed, setIsHikesListDisplayed] = useState(false);
-    const [selectedHikeInfo, setSelectedHikeInfo] = useState(false);
+    const [selectedNP, setSelectedNP] = useState('');
+    const [selectedHikeInfo, setSelectedHikeInfo] = useState({});
     const [isSelectedHikeDisplayed, setIsSelectedHikeDisplayed] = useState(false);
 
 
@@ -44,7 +45,7 @@ const ExplorePage = ({displayParksInfoArr, specificParkSearch}) => {
                         />
                     </Form.Group>
                     <NPList
-                        // parksInfoArr={parksInfoArr}
+                        setSelectedNP={setSelectedNP}
                         displayParksInfoArr={displayParksInfoArr}
                         getHikesInfo={getHikesInfo}
                         setIsHikesListDisplayed={setIsHikesListDisplayed}
@@ -52,7 +53,7 @@ const ExplorePage = ({displayParksInfoArr, specificParkSearch}) => {
                 </Col>
                 {isHikesListDisplayed
                     ? (<Col sm={3}>
-                        <h3>Trails</h3>
+                        <h3>Trails in {selectedNP}</h3>
                             <HikesList
                                 hikeInfoArr={hikeInfoArr}
                                 setSelectedHikeInfo={setSelectedHikeInfo}
@@ -70,7 +71,6 @@ const ExplorePage = ({displayParksInfoArr, specificParkSearch}) => {
                          </Col>)
                     : null
                 }
-
             </Row>
         </Container>
     )

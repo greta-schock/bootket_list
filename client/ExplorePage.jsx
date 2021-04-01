@@ -30,9 +30,9 @@ const ExplorePage = ({ parksInfoArr }) => {
     }
 
     return (
-        <Container fluid>
+        <Container fluid >
             <Row>
-                <Col sm={2} style={{backgroundColor: 'pink'}}>
+                <Col sm={2} style={{backgroundColor: '#17a2b8'}}> 
                     <h3>National Parks</h3>
                     <Form.Group> {/* this width is not working :/ */}
                         <Form.Control className="np-search" size="sm" type="text" placeholder="Search" />
@@ -44,8 +44,8 @@ const ExplorePage = ({ parksInfoArr }) => {
                     />
                 </Col>
                 {isHikesListDisplayed
-                    ? (<Col sm={3} style={{backgroundColor: 'lightgreen'}}>
-                        <h3>Trails/Hikes</h3>
+                    ? (<Col sm={3}>
+                        <h3>Trails</h3>
                             <HikesList
                                 hikeInfoArr={hikeInfoArr}
                                 setSelectedHikeInfo={setSelectedHikeInfo}
@@ -55,7 +55,7 @@ const ExplorePage = ({ parksInfoArr }) => {
                     : null
                 }
                 {isSelectedHikeDisplayed 
-                    ? (<Col style={{backgroundColor: 'lightblue'}}>
+                    ? (<Col>
                             <h3>{selectedHikeInfo.title}</h3>
                             <SelectedHikeDetail
                                 selectedHikeInfo={selectedHikeInfo}

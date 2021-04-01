@@ -18,8 +18,15 @@ const SelectedHikeDetail = ({ selectedHikeInfo }) => {
                     <Card.Title>{selectedHikeInfo.title}</Card.Title>
                     <Container>
                         <Row>
-                            <Col sm={2}>
-                              <Card.Text>{selectedHikeInfo.duration}</Card.Text>
+                            <Col sm={3}>
+                                {selectedHikeInfo.duration.length > 0 
+                                  ? <Card.Text><img src="../images/chronometer.png" width="30px"></img>{selectedHikeInfo.duration}</Card.Text>
+                                  : null
+                                }
+                              {selectedHikeInfo.arePetsPermitted === "true" 
+                                ? <Card.Text><img src="../images/pets-allowed.png" width="30px"></img>Pets Allowed</Card.Text>
+                                : <Card.Text><img src="../images/no-pets-allowed.png" width="30px"></img> No Pets Allowed</Card.Text>
+                              }
                             </Col>
                             <Col>
                               <Card.Title>Description</Card.Title>

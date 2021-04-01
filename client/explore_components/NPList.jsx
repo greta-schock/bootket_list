@@ -5,14 +5,14 @@ import Row from 'react-bootstrap/Row';
 import TabContainer from 'react-bootstrap/TabContainer';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-const NPList = ({ parksInfoArr, getHikesInfo, setIsHikesListDisplayed }) => {
+const NPList = ({ displayParksInfoArr, getHikesInfo, setIsHikesListDisplayed }) => {
     return (
         <React.Fragment>
             <TabContainer id="list-group-tabs-example">
                 <Row>
                     <Col style={{maxHeight: "900px", overflowY: "auto"}}>
                         <ListGroup>
-                            {parksInfoArr.map((park) => (
+                            {displayParksInfoArr.map((park) => (
                                 <ListGroup.Item
                                     action
                                     key={park.id}

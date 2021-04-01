@@ -29,15 +29,15 @@ const App = () => {
 
     const specificParkSearch = (searchInput) => {
         console.log('In the function: ', searchInput)
-        // var searchResultArr = [];
-        // var lowerCaseInput = searchInput.toLowerCase();
-        // parksInfoArr.map((park) => {
-        //     var lowerCaseParkName = park.name.toLowerCase();
-        //     if (lowerCaseParkName.includes(lowerCaseInput)) {
-        //         searchResultArr.push(movie);
-        //     }
-        // })
-        // setDisplayParksInfoArr(searchResultArr);
+        var searchResultArr = [];
+        var lowerCaseInput = searchInput.toLowerCase();
+        parksInfoArr.map((park) => {
+            var lowerCaseParkName = park.name.toLowerCase();
+            if (lowerCaseParkName.includes(lowerCaseInput)) {
+                searchResultArr.push(park);
+            }
+        })
+        setDisplayParksInfoArr(searchResultArr);
     }
 
     useEffect(() => getParksInfo(), []);
@@ -58,6 +58,7 @@ const App = () => {
             {explorePageIsDisplayed
                 ? <ExplorePage
                     parksInfoArr={parksInfoArr}
+                    displayParksInfoArr={displayParksInfoArr}
                     specificParkSearch={specificParkSearch}
                   />
                 : <MyBootketList />

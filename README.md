@@ -11,50 +11,26 @@ Built with:
 * [Express](https://expressjs.com/)
 
 API
-* [National Park API](https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark)
+* [National Parks API](https://www.nps.gov/subjects/developer/index.htm)
 
 
 Bootket List Components
 =============
 
-## User Authentication:<br>
-Sign In with Google
+## Explore Page:<br>
+Explore Different Hikes in National Parks
+![Screenshot of Sign In Page](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.08%20AM.png)
 
-![Screenshot of Sign In Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.05.57%20AM.png)
+## 
 
-## Profile Page:<br>
-![Screenshot of Profile Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.37.53%20AM.png)
-From the user's Profile page, the user can:
-- Create a new Smove
-- View current Smove
-- View list of all the user's moves
-- Toggle the current Smove to any existing Smove
-- Add a team member to the current Smove, which creates a new User
+## User Bootket List<br>
+Users can save interesting hikes to their Bootket List
+![Screenshot of User Bootket List](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.43%20AM.png)
 
-## Task List<br>
+## User Bootket List More Information Modal<br>
+Users can look at the information for the hikes they have saved in a modal on their Bootket List page
+![Screenshot of User Bootket List Modal](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.58%20AM.png)
 
-From the Task List page, the user can:
-- Create, Edit, or Delete any Task
-![Screenshot of Add Task Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.15.54%20AM.png)
-- View the user's Google Calendar
-- Add a task to the user's Google Calendar
-![Screenshot of Task List Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.16.09%20AM.png)
-- Navigate to the webpage of a designated task vendor
-
-
-## Inventory<br>
-![Screenshot of Inventory Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.17.23%20AM.png)
-From the Inventory page, the user can:
-- Add a "box" to the move inventory, with auto-incrementing box number
-- Edit any box in the inventory
-- Delete any box from the inventory 
-
-![Screenshot of Add Box](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.16.23%20AM.png)
-
-## Local Moving Services<br>
-![Screenshot of Local Moving Services Page](https://github.com/BlueOcean-Smove/Smove/blob/1d6e9640a81e79b44197d39e9d18646f260cb528/SmoveScreenshots/Screen%20Shot%202021-04-10%20at%2010.27.35%20AM.png)
-From the Local Moving Services page, the user can:
-- Use keywords to search for businesses
-- Sort search results
-- Display results on a map with pins and as cards in a carousel
-- Favorite any business, which will be made available when creating a new task
+## Leave No Trave Modal
+Users can learn more about the seven policies of Leave No Trave
+![Screenshot of LNT Modal](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.29%20AM.png)

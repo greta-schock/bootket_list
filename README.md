@@ -1,9 +1,5 @@
 # Bootket List
-
-# Introducing Smove
-
-Smove is a one-stop-platform for users to manage their move with ease! <br />
-Smove integrates all the pieces of moving including finding vendors, tracking tasks and inventory, and collaborating with family & friends.
+Explore different National Parks trails with Bootket List!
 
 Built with:
 * [React (Hooks)](https://reactjs.org/)
@@ -20,8 +16,6 @@ Bootket List Components
 ## Explore Page:<br>
 Explore Different Hikes in National Parks
 ![Screenshot of Sign In Page](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.08%20AM.png)
-
-## 
 
 ## User Bootket List<br>
 Users can save interesting hikes to their Bootket List

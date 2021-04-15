@@ -13,7 +13,7 @@ API
 Bootket List Components
 =============
 
-## Explore Page:<br>
+## Explore Page<br>
 Explore Different Hikes in National Parks
 ![Screenshot of Sign In Page](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.08%20AM.png)
 

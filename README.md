@@ -25,6 +25,6 @@ Users can save interesting hikes to their Bootket List
 Users can look at the information for the hikes they have saved in a modal on their Bootket List page
 ![Screenshot of User Bootket List Modal](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.58%20AM.png)
 
-## Leave No Trave Modal
-Users can learn more about the seven policies of Leave No Trave
+## Leave No Trace Modal
+Users can learn more about the seven principles of Leave No Trace
 ![Screenshot of LNT Modal](https://github.com/grsc0529/bootket_list/blob/main/screenshots/Screen%20Shot%202021-04-07%20at%2010.20.29%20AM.png)

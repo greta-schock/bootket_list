@@ -1,7 +1,7 @@
 const POSTGRES_CONNECTION = {
     user: process.env.USER, 
     host: process.env.HOST, 
-    database: 'products_overview', 
+    database: 'bootket_list', 
     password: process.env.PASSWORD, 
     port: process.env.PORT,
 }
